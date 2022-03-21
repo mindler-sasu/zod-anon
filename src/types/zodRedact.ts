@@ -19,7 +19,7 @@ export interface ZodRedactDef extends ZodTypeDef {
 export class ZodRedact extends ZodType<string, ZodRedactDef> {
   _parse(input: ParseInput): ParseReturnType<string> {
     const parsedType = this._getType(input);
-    console.log(parsedType);
+
     let redactValue = "<REDACTED>";
 
     const status = new ParseStatus();
