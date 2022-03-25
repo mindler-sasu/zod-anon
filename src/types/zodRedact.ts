@@ -16,8 +16,8 @@ export interface ZodRedactDef extends ZodTypeDef {
   typeName: "ZodRedact";
 }
 
-export class ZodRedact extends ZodType<string, ZodRedactDef> {
-  _parse(input: ParseInput): ParseReturnType<string> {
+export class ZodRedact extends ZodType<unknown, ZodRedactDef> {
+  _parse(input: ParseInput): ParseReturnType<this["_output"]> {
     const parsedType = this._getType(input);
 
     let redactValue = "<REDACTED>";

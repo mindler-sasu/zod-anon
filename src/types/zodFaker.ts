@@ -1,6 +1,5 @@
 import { faker } from "@faker-js/faker";
-import { Phone } from "@faker-js/faker/phone";
-faker.lorem.sentence;
+
 import {
   ParseInput,
   ParseReturnType,
@@ -21,7 +20,7 @@ export interface ZodFakerDef extends ZodTypeDef {
   checks: ZodFakerCheck[];
   typeName: "ZodFaker";
 }
-export class ZodFaker extends ZodType<string, ZodFakerDef> {
+export class ZodFaker extends ZodType<string | number, ZodFakerDef> {
   _parse(input: ParseInput): ParseReturnType<string> {
     const parsedType = this._getType(input);
 

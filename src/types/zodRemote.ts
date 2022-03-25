@@ -1,7 +1,6 @@
 import {
   AsyncParseReturnType,
   ParseInput,
-  ParseReturnType,
   ParseStatus,
   ZodType,
   ZodTypeDef,
@@ -9,7 +8,7 @@ import {
 import { errorUtil } from "zod/lib/helpers/errorUtil";
 import get from "lodash.get";
 import { RawCreateParams, processCreateParams } from "./util";
-import axios, { AxiosRequestConfig, Method } from "axios";
+import axios, { AxiosRequestConfig } from "axios";
 type ZodRemoteCheck =
   | {
       kind: "config";
@@ -23,7 +22,7 @@ export interface ZodRemoteDef extends ZodTypeDef {
   typeName: "ZodRemote";
 }
 
-export class ZodRemote extends ZodType<string, ZodRemoteDef> {
+export class ZodRemote extends ZodType<unknown, ZodRemoteDef> {
   async _parse(input: ParseInput): AsyncParseReturnType<string> {
     const parsedType = this._getType(input);
 

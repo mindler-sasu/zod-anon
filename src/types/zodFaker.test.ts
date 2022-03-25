@@ -39,7 +39,6 @@ describe("faker", () => {
       phone: z.faker().phone("+358-###-###"),
     });
     const anonymized = anonSchema.parse({ phone: "04066642069" });
-    console.log(anonymized);
 
     expect(anonymized).toEqual({
       phone: "+358-248-531",
