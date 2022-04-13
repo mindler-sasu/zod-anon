@@ -1,6 +1,6 @@
 import { z } from "../index";
 
-describe("FuzzNumber", () => {
+describe("FuzzHash", () => {
   it("should random hash", async () => {
     const anonSchema = z.object({
       ssn: z.hash(),
